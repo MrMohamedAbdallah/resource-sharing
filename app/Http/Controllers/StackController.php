@@ -14,7 +14,11 @@ class StackController extends Controller
      */
     public function index()
     {
-        //
+        $stacks = Stack::orderBy("order")->orderBy("name")->get();
+        
+        return response()->json([
+            'stacks'    => $stacks
+        ], 200);
     }
 
     /**
@@ -46,7 +50,11 @@ class StackController extends Controller
      */
     public function show(Stack $stack)
     {
-        //
+        $resources = $stack->resources()->with("category")->get();
+
+        return response()->json([
+            'resources' => $resources
+        ], 200);
     }
 
     /**
