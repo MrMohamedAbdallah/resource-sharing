@@ -9,7 +9,7 @@ class Resource extends Model
     protected   $table  = "resources",
                 $primaryKey = "id",
                 $fillable   = [
-                    "url", "name", "stack_id", "cateogry_id"
+                    "url", "name", "stack_id", "category_id"
                 ];
                 
     /**
